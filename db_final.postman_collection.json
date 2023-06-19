@@ -1,0 +1,879 @@
+{
+	"info": {
+		"_postman_id": "4f214f20-182e-4859-bc2f-66eeeb08785a",
+		"name": "db_final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25792233"
+	},
+	"item": [
+		{
+			"name": "nguoi_dung",
+			"item": [
+				{
+					"name": "lấy danh sách người dùng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/nguoi-dung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tạo người dùng",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"doB\",\r\n    \"email\": \"dota@gmail.com\",\r\n    \"pass_word\": \"222222222\",\r\n    \"phone\": \"33333333\",\r\n    \"birth_day\": \"18/12/2001\",\r\n    \"gender\": false,\r\n    \"role\": \"user\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/nguoi-dung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin người dùng bằng id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/10",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cập nhật người dùng",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"pass_word\": \"abc1234\",\r\n    \"phone\": \"0989999999\",\r\n    \"birth_day\": \"18/01/1999\",\r\n    \"gender\": true,\r\n    \"role\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin theo từng trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/phan-trang-tim-kiem?pageIndex=1&pageSize=8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa người dùng",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin người dùng theo tên",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/search/m",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								"search",
+								"m"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật ảnh đại diện",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiQWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiIsInBob25lIjoiMDk4OTk5OTk5OSIsImJpcnRoX2RheSI6IjE4LzAxLzE5OTkiLCJnZW5kZXIiOnRydWUsInJvbGUiOiJBZG1pbiIsImF2YXRhciI6IjE2ODY4MzM4NzU4MzBfS2VhbnVfUmVldmVzXzIwMTNfKDEwNjE1MTQ2MDg2KV8oY3JvcHBlZCkuanBnIiwiaXNfZGVsZXRlIjpudWxsfSwiaWF0IjoxNjg2ODc4MjU1LCJleHAiOjE2ODY4Nzg4NTV9.B5CMPnsEFA-mxATzdFrAqLeZz-kipJcMjWUmg9hXlJY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tanph/Desktop/Keanu_Reeves_2013_(10615146086)_(cropped).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/nguoi-dung/upload-avatar",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"nguoi-dung",
+								"upload-avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vi_tri",
+			"item": [
+				{
+					"name": "lấy vị trí",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/vi-tri/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy vị trí theo Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "tạo vị trí",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_vi_tri\" : \"Hồ Chí Minh\",\r\n    \"tinh_thanh\" : \"Cần Thơ\",\r\n    \"quoc_gia\" : \"Việt Nam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/vi-tri/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật vị trí",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_vi_tri\" : \"Thành Phố Hồ Chí Minh\",\r\n    \"tinh_thanh\" : \"Thành phố Hồ Chí Minh\",\r\n    \"quoc_gia\" : \"Việt Nam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/vi-tri/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa vị trí",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/vi-tri/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tìm kiếm theo trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/vi-tri/phan-trang-tim-kiem?pageIndex=1&pageSize=3&keyWord=ho",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "keyWord",
+									"value": "ho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật tải hình ảnh đại diện",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoyLCJuYW1lIjoidGVzdCAxIiwiZW1haWwiOiJ0ZXN0MUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIiLCJwaG9uZSI6IjEyMzQ5ODc1IiwiYmlydGhfZGF5IjoiMDEvMDIvMTk5MiIsImdlbmRlciI6dHJ1ZSwicm9sZSI6IlVzZXIiLCJhdmF0YXIiOm51bGwsImlzX2RlbGV0ZSI6bnVsbH0sImlhdCI6MTY4Njg4MjMxNCwiZXhwIjoxNjg2ODgyOTE0fQ.RJL4R3zSn9VF9xtxmbp7ctr0ANOzl2Ci08879JImP6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tanph/Desktop/JPEG_example_flower.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/vi-tri/upload-hinh-vi-tri/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"vi-tri",
+								"upload-hinh-vi-tri",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Đăng nhập",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"pass_word\" : \"abc1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/auth/sign-in",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tạo người dùng",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n    \"name\": \"doP\",\r\n    \"email\": \"dota23@gmail.com\",\r\n    \"pass_word\": \"222222222\",\r\n    \"phone\": \"33333333\",\r\n    \"birth_day\": \"18/12/2001\",\r\n    \"gender\": false\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/auth/sign-up",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "phong",
+			"item": [
+				{
+					"name": "Lấy thông tin phòng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/phong/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin phòng theo id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/phong/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tạo phòng",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"ten_phong\": \"NewApt D1 - Cozy studio - NU apt - 500m Bui Vien!\",\r\n      \"khach\": 3,\r\n      \"phong_ngu\": 1,\r\n      \"giuong\": 1,\r\n      \"phong_tam\": 1,\r\n      \"mo_ta\": \"Tự nhận phòng\\r\\nTự nhận phòng bằng khóa thông minh.\\r\\nDinh Long là Chủ nhà siêu cấp\\r\\nChủ nhà siêu cấp là những chủ nhà có kinh nghiệm, được đánh giá cao và là những người cam kết mang lại quãng thời gian ở tuyệt vời cho khách.\",\r\n      \"gia_tien\": 28,\r\n      \"may_giat\": true,\r\n      \"ban_la\": true,\r\n      \"tivi\": true,\r\n      \"dieu_hoa\": false,\r\n      \"wifi\": true,\r\n      \"bep\": false,\r\n      \"do_xe\": true,\r\n      \"ho_boi\": true,\r\n      \"ban_ui\": true,\r\n      \"ma_vi_tri\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/phong/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật phòng",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"ten_phong\": \"NewApt D1 - Cozy studio - NU apt - 500m Bui Vien!\",\r\n      \"khach\": 3,\r\n      \"phong_ngu\": 2,\r\n      \"giuong\": 1,\r\n      \"phong_tam\": 1,\r\n      \"mo_ta\": \"Tự nhận phòng\\r\\nTự nhận phòng bằng khóa thông minh.\\r\\nDinh Long là Chủ nhà siêu cấp\\r\\nChủ nhà siêu cấp là những chủ nhà có kinh nghiệm, được đánh giá cao và là những người cam kết mang lại quãng thời gian ở tuyệt vời cho khách.\",\r\n      \"gia_tien\": 28,\r\n      \"may_giat\": true,\r\n      \"ban_la\": true,\r\n      \"tivi\": true,\r\n      \"dieu_hoa\": false,\r\n      \"wifi\": true,\r\n      \"bep\": false,\r\n      \"do_xe\": true,\r\n      \"ho_boi\": true,\r\n      \"ban_ui\": true,\r\n      \"ma_vi_tri\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/phong/3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa phòng",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/phong/3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy phòng theo mã vị trí",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/phong/lay-phong-theo-vi-tri?ma-vi-tri=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"lay-phong-theo-vi-tri"
+							],
+							"query": [
+								{
+									"key": "ma-vi-tri",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy phòng theo phần trang tìm kiếm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/phong/phan-trang-tim-kiem?pageIndex=1&pageSize=2&keyWord=a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "keyWord",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload hình phòng",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiQWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6IiIsInBob25lIjoiMDk4OTk5OTk5OSIsImJpcnRoX2RheSI6IjE4LzAxLzE5OTkiLCJnZW5kZXIiOnRydWUsInJvbGUiOiJBZG1pbiIsImF2YXRhciI6IjE2ODY4Nzg0MzMyMzlfS2VhbnVfUmVldmVzXzIwMTNfKDEwNjE1MTQ2MDg2KV8oY3JvcHBlZCkuanBnIiwiaXNfZGVsZXRlIjpudWxsfSwiaWF0IjoxNjg2OTE5MDI0LCJleHAiOjE2ODY5MTk2MjR9.sET1dF-3cX5bcSQGUol2R_r9ugCn5lwTDSP4RuP3OkM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tanph/Desktop/346142113_939875007339727_4012033227578981022_n.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/phong/upload-hinh-phong?maPhong=1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"phong",
+								"upload-hinh-phong"
+							],
+							"query": [
+								{
+									"key": "maPhong",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dat_phong",
+			"item": [
+				{
+					"name": "đặt phòng",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 1,\r\n    \"ngay_den\" : \"2023-07-18T00:00:02.758Z\",\r\n    \"ngay_di\" : \"2023-07-19T00:00:02.757Z\",\r\n    \"so_luong_khach\" : 3,\r\n    \"ma_nguoi_dat\" : 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/dat-phong",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"dat-phong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin đặt phòng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/dat-phong",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"dat-phong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy theo mã đặt phòng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/dat-phong/lay-theo-nguoi-dung/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"dat-phong",
+								"lay-theo-nguoi-dung",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy theo người dùng",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật đặt phòng",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 1,\r\n    \"ngay_den\" : \"2023-07-18T00:00:02.758Z\",\r\n    \"ngay_di\" : \"2023-07-19T00:00:02.757Z\",\r\n    \"so_luong_khach\" : 3,\r\n    \"ma_nguoi_dat\" : 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/dat-phong/3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"dat-phong",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa đặt phòng",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/dat-phong/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"dat-phong",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "binh_luan",
+			"item": [
+				{
+					"name": "tạo bình luận",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJuYW1lIjoiVmFuIEEiLCJlbWFpbCI6InZhbkFAZ21haWwuY29tIiwicGFzc193b3JkIjoiIiwicGhvbmUiOiIwOTg5OTk5OTk5IiwiYmlydGhfZGF5IjoiMTgvMDEvMTk5OSIsImdlbmRlciI6dHJ1ZSwicm9sZSI6IkFkbWluIiwiYXZhdGFyIjpudWxsLCJpc19kZWxldGUiOm51bGx9LCJpYXQiOjE2ODcwNTc4MTksImV4cCI6MTY4NzA1ODQxOX0.zN8PVT6xvVU3Ollq1kRydONdmixuwgLfUjORlGOUa1U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 1,\r\n    \"ma_nguoi_binh_luan\" : 3,\r\n    \"ngay_binh_luan\" : \"2023-06-17T03:15:23.253Z\",\r\n    \"noi_dung\" : \"motasad3askdl;akd;adlal;skd;lak;ldasd\",\r\n    \"sao_binh_luan\" : 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/binh-luan/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"binh-luan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy bình luận",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/binh-luan/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"binh-luan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy bình luận theo id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật bình luận",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJuYW1lIjoiVmFuIEEiLCJlbWFpbCI6InZhbkFAZ21haWwuY29tIiwicGFzc193b3JkIjoiIiwicGhvbmUiOiIwOTg5OTk5OTk5IiwiYmlydGhfZGF5IjoiMTgvMDEvMTk5OSIsImdlbmRlciI6dHJ1ZSwicm9sZSI6IkFkbWluIiwiYXZhdGFyIjpudWxsLCJpc19kZWxldGUiOm51bGx9LCJpYXQiOjE2ODcwNzMzOTMsImV4cCI6MTY4NzA3Mzk5M30.2F4j3tPAJWridnwa9yIqZxlqO0j8V7PGHvhKLp5-sNk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 1,\r\n    \"ma_nguoi_binh_luan\" : 3,\r\n    \"ngay_binh_luan\" : \"2023-06-17T03:15:23.253Z\",\r\n    \"noi_dung\" : \"mota1\",\r\n    \"sao_binh_luan\" : 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/binh-luan/3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"binh-luan",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa bình luận",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy bình luận theo mã phòng",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:8080/api"
+		}
+	]
+}
